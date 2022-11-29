@@ -21,6 +21,7 @@ const Create = () => {
   const [dueDate, setDueDate] = useState('');
   const [category, setCategory] = useState('');
   const [assignedUsers, setAssignedUsers] = useState([]);
+  const [formError, setFormError] = useState(null);
 
   useEffect(() => {
     if (documents) {
@@ -33,6 +34,28 @@ const Create = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormError(null);
+
+    if (!name) {
+      setFormError('Please provide a project name.');
+      return;
+    }
+    if (!details) {
+      setFormError('Please provide project details.');
+      return;
+    }
+    if (!dueDate) {
+      setFormError('Please set a due date.');
+      return;
+    }
+    if (!category) {
+      setFormError('Please select a project category.');
+      return;
+    }
+    if (assignedUsers.length < 1) {
+      setFormError('Please assign the project to at least 1 user.');
+      return;
+    }
     console.log(name, details, dueDate, category.value, assignedUsers);
   }
   return (
@@ -42,7 +65,6 @@ const Create = () => {
         <label>
           <span>Project name:</span>
           <input
-            required
             type="text" 
             onChange={(e) => setName(e.target.value)}
             value={name}
@@ -51,7 +73,6 @@ const Create = () => {
         <label>
           <span>Project details:</span>
           <textarea
-            required
             type="text" 
             onChange={(e) => setDetails(e.target.value)}
             value={details}
@@ -60,7 +81,6 @@ const Create = () => {
         <label>
           <span>Set due date:</span>
           <input
-            required
             type="date" 
             onChange={(e) => setDueDate(e.target.value)}
             value={dueDate}
@@ -83,6 +103,8 @@ const Create = () => {
         </label>
 
         <button className='btn'>Add Project</button>
+
+        {formError && <p className='error'>{formError}</p>}
       </form>
     </div>
   )
