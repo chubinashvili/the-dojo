@@ -9,6 +9,7 @@ import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Project from './pages/project/Project';
 import Sidebar from './components/sidebar/Sidebar';
+import OnlineUsers from './components/online-users/OnlineUsers';
 
 // styles
 import './App.css';
@@ -33,6 +34,7 @@ function App() {
           </div>
         </BrowserRouter>
       )}
+      {user && <OnlineUsers />}
     </div>
   );
 }
