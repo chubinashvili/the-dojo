@@ -2,6 +2,7 @@ import { BrowserRouter , Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 
 // pages and components
+import Navbar from './components/navbar/Navbar';
 import Dashboard from './pages/dashboard/Dashboard';
 import Create from './pages/create/Create';
 import Login from './pages/login/Login';
@@ -19,11 +20,13 @@ function App() {
         <BrowserRouter>
           <div className='container'>
             <Routes> 
-              <Route path='/' element={user ? <Dashboard /> : <Navigate to="/login" replace />} />
-              <Route path='/create' element={user ? <Create /> : <Navigate to="/login" replace />} />
-              <Route path='/projects/:id' element={user ? <Project /> : <Navigate to="/login" replace />} />
-              <Route path='/login' element={!user ? <Login /> : <Navigate to='/' replace />} />
-              <Route path='/signup' element={!user ? <Signup /> : <Navigate to='/' replace />} />
+              <Route path='/' element={<Navbar />}>                
+                <Route index element={user ? <Dashboard /> : <Navigate to="login" replace />} />
+                <Route path='create' element={user ? <Create /> : <Navigate to="login" replace />} />
+                <Route path='projects/:id' element={user ? <Project /> : <Navigate to="login" replace />} />
+                <Route path='login' element={!user ? <Login /> : <Navigate to='/' replace />} />
+                <Route path='signup' element={!user ? <Signup /> : <Navigate to='/' replace />} />
+              </Route>
             </Routes>
           </div>
         </BrowserRouter>
