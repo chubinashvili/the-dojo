@@ -6,7 +6,7 @@ export const useLogout = () => {
   const [isCancelled, setIsCancelled] = useState(false)
   const [error, setError] = useState(null)
   const [isPending, setIsPending] = useState(false)
-  const { dispatch, user } = useAuthContext()
+  const { user, dispatch } = useAuthContext()
   
   const logout = async () => {
     setError(null)
@@ -15,8 +15,8 @@ export const useLogout = () => {
     try {
       // update online status
       const { uid } = user;
-      await projectFirestore.collection('users').doc(uid).update({ online: false });
-
+      await projectFirestore.collection('users').doc(uid).update({ online: false })
+      
       // sign the user out
       await projectAuth.signOut()
       
