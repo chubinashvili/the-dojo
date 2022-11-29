@@ -8,6 +8,7 @@ import Create from './pages/create/Create';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Project from './pages/project/Project';
+import Sidebar from './components/sidebar/Sidebar';
 
 // styles
 import './App.css';
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       {authIsReady && (
         <BrowserRouter>
+          <Sidebar />
           <div className='container'>
             <Routes> 
               <Route path='/' element={<Navbar />}>                
