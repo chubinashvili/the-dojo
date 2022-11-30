@@ -39,7 +39,7 @@
   
   /* project comments */
   .project-comments label {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
   .project-comments textarea {
     min-height: 40px;
