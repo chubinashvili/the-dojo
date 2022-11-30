@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import Select from 'react-select';
 import { useCollection } from '../../hooks/useCollection';
+import { timestamp } from '../../firebase/config';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 // styles
 import './Create.css';
@@ -15,6 +17,7 @@ const categories = [
 const Create = () => {
   const { documents } = useCollection('users');
   const [users, setUsers] = useState([]);
+  const { user } = useAuthContext();
   // form field values
   const [name, setName] = useState('');
   const [details, setDetails] = useState('');
@@ -36,18 +39,6 @@ const Create = () => {
     e.preventDefault();
     setFormError(null);
 
-    if (!name) {
-      setFormError('Please provide a project name.');
-      return;
-    }
-    if (!details) {
-      setFormError('Please provide project details.');
-      return;
-    }
-    if (!dueDate) {
-      setFormError('Please set a due date.');
-      return;
-    }
     if (!category) {
       setFormError('Please select a project category.');
       return;
@@ -56,7 +47,32 @@ const Create = () => {
       setFormError('Please assign the project to at least 1 user.');
       return;
     }
-    console.log(name, details, dueDate, category.value, assignedUsers);
+
+    const createdBy = {
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      id: user.uid, 
+    }
+
+    const assignedUsersList = assignedUsers.map(user => {
+      return { 
+        displayName: user.value.displayName,
+        photoURL: user.value.photoURL,
+        id: user.value.id,
+      };
+    })
+
+    const project = {
+      name,
+      details,
+      category: category.value,
+      dueDate: timestamp.fromDate(new Date(dueDate)),
+      comment: [],
+      createdBy,
+      assignedUsersList,
+    }
+    
+    console.log(project);
   }
   return (
     <div className='create-form'>
