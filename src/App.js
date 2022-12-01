@@ -24,9 +24,9 @@ function App() {
           <div className='container'>
             <Routes> 
               <Route path='/' element={<Navbar />}>                
-                <Route index element={user ? <Dashboard /> : <Navigate to="login" replace />} />
-                <Route path='create' element={user ? <Create /> : <Navigate to="login" replace />} />
-                <Route path='projects/:id' element={user ? <Project /> : <Navigate to="login" replace />} />
+                <Route index element={user ? <Dashboard /> : <Navigate to="../login" replace />} />
+                <Route path='create' element={user ? <Create /> : <Navigate to="../login" replace />} />
+                <Route path='projects/:id' element={user ? <Project /> : <Navigate to="../../login" replace />} />
                 <Route path='login' element={!user ? <Login /> : <Navigate to='/' replace />} />
                 <Route path='signup' element={!user ? <Signup /> : <Navigate to='/' replace />} />
               </Route>
