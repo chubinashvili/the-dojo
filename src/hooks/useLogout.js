@@ -7,7 +7,6 @@ export const useLogout = () => {
   const [error, setError] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const { user, dispatch } = useAuthContext()
-  const navigate = useNavigate()
   
   const logout = async () => {
     setError(null)
