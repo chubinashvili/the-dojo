@@ -45,3 +45,41 @@
   .sidebar .links .active img {
     filter: invert(40%);
   }
+
+  @media screen and (max-width: 1000px) {
+    .sidebar {
+      position: static;
+      min-height: 200px;
+      min-width: 100vw;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar .user {
+        border: none;
+        padding: 0;
+    }
+
+    .sidebar-content {
+        position: static;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .sidebar .links {
+        margin: 0;
+    }
+
+    .sidebar .links a {
+        margin: 0;
+        border-radius: 20px;
+    }
+
+    .sidebar .links a.active {
+        color: #555;
+        background: var(--bg-color);
+        border-radius: 20px;
+     }
+  }

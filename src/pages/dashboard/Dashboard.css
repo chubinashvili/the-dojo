@@ -27,3 +27,44 @@
   .project-filter button.active {
     color: var(--primary-color);
   } 
+
+  @media screen and (max-width: 1500px) {
+    .project-filter button {
+        padding: 0.5em 1em;
+    } 
+    .project-filter nav {
+      max-width: 700px;
+      padding: 4px;
+      margin-right: auto;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .project-filter button {
+      font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 528px) {
+    .project-filter button {
+      font-size: 0.75em;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .project-filter nav{
+      flex-flow:column wrap;  
+      height:120px;   
+    }
+    .project-filter p {
+      flex-grow:0;
+      flex-basis:100%;
+    }
+    .project-filter button {
+      font-size: 0.8em;
+      border: none;
+    }
+}

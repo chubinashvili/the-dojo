@@ -13,7 +13,7 @@ const ProjectSummary = ({ project }) => {
     navigate('/');
   }
   return (
-    <div>
+    <div className='project-summary-container'>
         <div className="project-summary">
             <h2 className="page-title">{project.name}</h2>
             <p>By {project.createdBy.displayName}</p>

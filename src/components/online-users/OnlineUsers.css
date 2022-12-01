@@ -35,3 +35,14 @@
     border-radius: 50%;
     margin-top: 2px;
   }
+
+  @media screen and (max-width: 1000px){
+    .user-list {
+       width: 100vw;
+       margin-top: 2rem;
+       display: flex;
+       align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+}
