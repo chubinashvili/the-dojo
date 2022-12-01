@@ -82,10 +82,6 @@
   .project-details {
       grid-template-columns:  1fr;
   }
-  .project-summary-container {
-    display: flex;
-    flex-direction: column;
-  }
   .project-summary {
     display: flex;
     flex-direction: column;
