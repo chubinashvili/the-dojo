@@ -12,9 +12,6 @@ Here is the Live Project - https://project-managementt.web.app/
 <p align="center">
   <img alt="CreateProject" src="images/create.PNG" width="45%">
   &nbsp; &nbsp; &nbsp;
-  <img alt="Login" src="images/login.PNG" width="45%">
-</p>
-<p align="left">
   <img alt="Signup" src="images/signup.PNG" width="45%">
 </p>
 
