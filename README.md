@@ -5,16 +5,16 @@ A Project Management App. View the top projects, get a detailed information and 
 Here is the Live Project - https://project-managementt.web.app/
 
 <p align="center">
-  <img alt="Dashboard" src="images/dashboard.png" width="45%">
+  <img alt="Dashboard" src="images/dashboard.PNG" width="45%">
   &nbsp; &nbsp; &nbsp;
-  <img alt="ProjectDetails" src="images/projectDetails.png" width="45%">
+  <img alt="ProjectDetails" src="images/projectDetails.PNG" width="45%">
 </p>
 <p align="center">
-  <img alt="CreateProject" src="images/create.png" width="30%">
+  <img alt="CreateProject" src="images/create.PNG" width="30%">
   &nbsp; &nbsp; &nbsp;
-  <img alt="Login" src="images/login.png" width="30%">
+  <img alt="Login" src="images/login.PNG" width="30%">
   &nbsp; &nbsp; &nbsp;
-  <img alt="Signup" src="images/signup.png" width="30%">
+  <img alt="Signup" src="images/signup.PNG" width="30%">
 </p>
 
 ## Getting Started
