@@ -2,7 +2,7 @@
 
 A Project Management App. View the top projects, get a detailed information and add a comment on it if you'd like, also add a project and delete it when It's completed. 
 
-Here is the Live Project - https://project-managementt.web.app/
+Here is the Live Project - https://projectt-management.netlify.app/
 
 <p align="center">
   <img alt="Dashboard" src="images/dashboard.PNG" width="45%">
